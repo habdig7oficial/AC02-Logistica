@@ -1,0 +1,7 @@
+{
+  "name": "AC02-Logistica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
