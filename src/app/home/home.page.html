@@ -1,11 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      AC02-Logistica
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <ion-list>
+    <ion-item>
+      <ion-label>Insira o Peso da mercadoria em kg</ion-label>
+      <ion-input placeholder="1kg"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Insira a Distância em km</ion-label>
+      <ion-input placeholder="1km"></ion-input>
+    </ion-item>
+    
+    <ion-item class="ion-margin-bottom">
+      <ion-select interface="popover" placeholder="Selecione o tipo de Entrega" (ionChange)="tipo_envio = $event; exibirEnvio()">
+        <ion-select-option>Comum</ion-select-option>
+        <ion-select-option>Expressa</ion-select-option>
+        <ion-select-option>Same Day</ion-select-option>
+        <ion-select-option>Fornecedor</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button (click)="Calcular()" expand="block">Calcular</ion-button>
+  </ion-list>  
 </ion-content>
