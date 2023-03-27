@@ -26,5 +26,5 @@ export let TabelaPreco: Preco_Entrega = {
   Comum: { comissao: 0, multiplicador: 1 },
   Expresso: { comissao: 10, multiplicador: 1.2 },
   SameDay: { comissao: 12.99, multiplicador: 1.4 },
-  Fornecedor: { comissao: 0, multiplicador: 0.7 },
+  Fornecedor: { comissao: 0, multiplicador: 0.8 },
 };
