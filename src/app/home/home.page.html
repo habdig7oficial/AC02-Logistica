@@ -10,12 +10,12 @@
   <ion-list>
     <ion-item>
       <ion-label>Massa da mercadoria (kg)</ion-label>
-      <ion-input placeholder="1kg"></ion-input>
+      <ion-input placeholder="1kg" (ionInput)="massa = $event;"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Distância (km)</ion-label>
-      <ion-input placeholder="1km"></ion-input>
+      <ion-input (ionInput)="dev = $event;" placeholder="1km" ></ion-input>
     </ion-item>
     
     <ion-item class="ion-margin-bottom">
@@ -33,7 +33,8 @@
       <ion-grid>
         <ion-col>
           <h1 class="ion-text-center btd">Detalhes da entrega</h1>
-          <p>Tipo da Entrega: {{ tipo_envio?.detail?.value == undefined ?  '---' : tipo_envio?.detail?.value }}</p>
+          <p>Massa a transportar: {{ massa?.target.value == undefined ?  '---' : massa?.target.value }} kg</p>
+          <p>Distância a percorrer: {{ dev?.target.value == undefined ?  '---' : dev?.target.value }} km</p>
           <p>Tipo da Entrega: {{ tipo_envio?.detail?.value == undefined ?  '---' : tipo_envio?.detail?.value }}</p>
           <p class="ion-text-center destaque">Valor Final: R$ {{ valor_final == undefined ?  '---' : valor_final}}</p>
         </ion-col>

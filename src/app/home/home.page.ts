@@ -10,6 +10,7 @@ interface IonSel extends Event {
   };
 }
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -21,12 +22,12 @@ export class HomePage {
   tempo: number = 0 
   tempo_final: number = this.tempo
   valor_final?: number;
+  massa?: any
+  dev?: any
 
   constructor(public allertController: AlertController) {
 
   }
-
-
 
    async exibirEnvio(){
 
