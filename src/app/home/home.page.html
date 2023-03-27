@@ -9,12 +9,12 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item>
-      <ion-label>Insira o Peso da mercadoria em kg</ion-label>
+      <ion-label>Massa da mercadoria (kg)</ion-label>
       <ion-input placeholder="1kg"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Insira a Distância em km</ion-label>
+      <ion-label>Distância (km)</ion-label>
       <ion-input placeholder="1km"></ion-input>
     </ion-item>
     
@@ -28,5 +28,16 @@
     </ion-item>
 
     <ion-button (click)="Calcular()" expand="block">Calcular</ion-button>
+
+    <ion-item>
+      <ion-grid>
+        <ion-col>
+          <h1 class="ion-text-center btd">Detalhes da entrega</h1>
+          <p>Tipo da Entrega: {{ tipo_envio?.detail?.value == undefined ?  '---' : tipo_envio?.detail?.value }}</p>
+          <p>Tipo da Entrega: {{ tipo_envio?.detail?.value == undefined ?  '---' : tipo_envio?.detail?.value }}</p>
+          <p class="ion-text-center destaque">Valor Final: R$ {{ valor_final == undefined ?  '---' : valor_final}}</p>
+        </ion-col>
+      </ion-grid>
+    </ion-item>
   </ion-list>  
 </ion-content>
