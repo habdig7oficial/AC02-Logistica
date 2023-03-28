@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AlertController } from '@ionic/angular';
 
-import { TabelaTempo, TabelaPreco } from './tabela.tempo';
+import { TabelaTempo, TabelaPreco, TabelaDesconto } from './tabela.tempo';
 
 interface IonSel extends Event {
   detail?: {
@@ -28,8 +28,10 @@ export class HomePage {
   tempo: number = 0
   tempo_final: number = this.tempo
   valor_final?: number;
+  ValorComDesconto?: number;
   massa: number = 0
   dev: number = 0
+  desconto: number = 0
 
   constructor(public allertController: AlertController) {
 
@@ -63,7 +65,21 @@ export class HomePage {
     else if (this.tipo_envio?.detail?.value == 'Same Day')  {comissao = TabelaPreco.SameDay.comissao; Vmul = TabelaPreco.SameDay.multiplicador}
     else if (this.tipo_envio?.detail?.value == 'Fornecedor') {comissao = TabelaPreco.Fornecedor.comissao; Vmul = TabelaPreco.Fornecedor.multiplicador}
 
+
+    if(this.massa >= 100){
+      this.desconto = TabelaDesconto.kg100
+    }
+    else if (this.massa >= 50){
+      this.desconto = TabelaDesconto.kg50
+    }
+    else if(this.massa >= 10){
+      this.desconto = TabelaDesconto.kg10
+    }
+    this.desconto = (this.desconto * this.massa) / 100
+  
     this.valor_final = (this.massa * Vmul * (this.dev * 0.6)) + comissao
+
+    this.ValorComDesconto = this.valor_final - this.desconto
 
     const alerta = await this.allertController.create({
       header:  `Tipo de Envio ${this.tipo_envio?.detail?.value}`,

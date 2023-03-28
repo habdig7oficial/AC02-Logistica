@@ -37,7 +37,9 @@
           <p>Distância a percorrer: {{ dev == undefined || dev == 0?  '---' : dev }} km</p>
           <p>Tipo da Entrega: {{ tipo_envio?.detail?.value == undefined ?  '---' : tipo_envio?.detail?.value }}</p>
           <p>Tempo Estimado: {{ tempo == 0 ?  '---' : tempo }} h</p>
-          <p class="ion-text-center destaque">Valor Final: R$ {{ valor_final == undefined ?  '---' : valor_final}}</p>
+          <p>Desconto: R$ {{ desconto == undefined ?  '---' : desconto}}</p>
+          <p>Valor Sem Desconto: R$ {{ valor_final == undefined ?  '---' : valor_final}}</p>
+          <p class="ion-text-center destaque">Valor Final: R$ {{ ValorComDesconto == undefined ?  '---' : ValorComDesconto}}</p>
         </ion-col>
       </ion-grid>
     </ion-item>

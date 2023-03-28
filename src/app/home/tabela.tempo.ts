@@ -12,6 +12,12 @@ interface Preco_Entrega {
   Fornecedor: { comissao: number; multiplicador: number };
 }
 
+interface Desconto_Entregra{
+  kg10: number,
+  kg50: number
+  kg100: number
+}
+
 /* Tempo em  horas */
 
 export let TabelaTempo: Tempo_Entrega = {
@@ -28,3 +34,10 @@ export let TabelaPreco: Preco_Entrega = {
   SameDay: { comissao: 12.99, multiplicador: 1.4 },
   Fornecedor: { comissao: 0, multiplicador: 0.8 },
 };
+
+export let TabelaDesconto: Desconto_Entregra = {
+  kg10: 10,
+  kg50: 20,
+  kg100: 50,
+
+}
