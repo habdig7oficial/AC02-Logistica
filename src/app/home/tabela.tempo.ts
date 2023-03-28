@@ -36,8 +36,8 @@ export let TabelaPreco: Preco_Entrega = {
 };
 
 export let TabelaDesconto: Desconto_Entregra = {
-  kg10: 10,
-  kg50: 20,
-  kg100: 50,
+  kg10: 15,
+  kg50: 30,
+  kg100: 56,
 
 }

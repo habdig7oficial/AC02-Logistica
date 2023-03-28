@@ -33,6 +33,9 @@ export class HomePage {
   dev: number = 0
   desconto: number = 0
 
+
+  desconto_front = { TabelaTempo, TabelaPreco, TabelaDesconto }
+
   constructor(public allertController: AlertController) {
 
   }
@@ -77,7 +80,7 @@ export class HomePage {
     }
     this.desconto = (this.desconto * this.massa) / 100
   
-    this.valor_final = (this.massa * Vmul * (this.dev * 0.6)) + comissao
+    this.valor_final = (this.massa * Vmul + (this.dev * 0.6)) + comissao
 
     this.ValorComDesconto = this.valor_final - this.desconto
 
